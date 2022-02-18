@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css"/>
-    <title>Homework</title>
+    <title>Conference Landing Page</title>
   </head>
   <body>
     <header>
@@ -34,7 +34,7 @@
         </section>
         <div class="header"> <img
             class="logo_RICG"
-            src="/images/logo-Conferencia-RICG-02-1295x1000.png"
+            src="images/logo-Conferencia-RICG-02-1295x1000.png"
             alt="logo conferencia RICG"
           />
           <hr class="first_hr" />
@@ -46,13 +46,13 @@
           <hr class="second_hr" />
     </header>
     <div class="container_img_hotel">
-      <img class="hotel_img" src="/images/hootel.jpg" alt=""/>
+      <img class="hotel_img" src="images/hootel.jpg" alt=""/>
     </div>
-    <div class="auditorio"><img  class="auditorio_img" src="/auditorio.jpg" alt="" /></div>
+    <div class="auditorio"><img  class="auditorio_img" src="auditorio.jpg" alt="" /></div>
     <div class="container_cards">
-      <div><img src="/images/pool.jpg" alt="" /></div>
-      <div><img src="/images/room.jpg" alt="" /></div>
-      <div><img src="/images/comida.jpg" alt="" /></div>
+      <div><img src="images/pool.jpg" alt="" /></div>
+      <div><img src="images/room.jpg" alt="" /></div>
+      <div><img src="images/comida.jpg" alt="" /></div>
     </div>
     <hr class="third_hr"/>
     <section class="contact_container">
@@ -68,7 +68,7 @@
         <p class="hotel_page">www.barcelo.com</p>
         <p class="hotel_number">(809)221-2131</p>
       </div>
-      <div class="icon_location"><img src="/images/location.png" alt=""></div>
+      <div class="icon_location"><img src="images/location.png" alt=""></div>
     </section>
     <hr class="fourth_hr"/>
     <div class="footer_contain">
@@ -85,55 +85,7 @@
         <p class="p_pft">DIRECCION GENERAL DE CONTRATACIONES PUBLICAS</p>
       </div> 
     </div>
-    <script>
-      function myMap() {
-      var mapProp= {
-        center:new google.maps.LatLng(18.4547691,-69.9354077),
-        zoom:16,
-        disableDefaultUI: true,
-        disableDoubleClickZoom: true,
-        draggable: false
-      };
-      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-      }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJVTd-Qfm4xiN_NnYzGaH9JUiZw_9A1iM&callback=myMap"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => { 
-  
-     
-          const DATE_TARGET = new Date('10/28/2022 0:01 AM');
-
-          const SPAN_DAYS = document.querySelector('span#days');
-          const SPAN_HOURS = document.querySelector('span#hours');
-          const SPAN_MINUTES = document.querySelector('span#minutes');
-          const SPAN_SECONDS = document.querySelector('span#seconds');
-
-          const MILLISECONDS_OF_A_SECOND = 1000;
-          const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
-          const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
-          const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
-  
-          function updateCountdown() {
-
-              const NOW = new Date()
-              const DURATION = DATE_TARGET - NOW;
-              const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
-              const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
-              const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
-              const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
- 
-              SPAN_DAYS.textContent = REMAINING_DAYS;
-              SPAN_HOURS.textContent = REMAINING_HOURS;
-              SPAN_MINUTES.textContent = REMAINING_MINUTES;
-              SPAN_SECONDS.textContent = REMAINING_SECONDS;
-          }
-  
-     
-          updateCountdown();
-
-          setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
-        });
-      </script>
+    <script src="index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJVTd-Qfm4xiN_NnYzGaH9JUiZw_9A1iM&callback=initMap"></script>
   </body>
 </html>
