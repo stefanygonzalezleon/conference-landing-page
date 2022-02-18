@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css"/>
+    <title>Homework</title>
+  </head>
+  <body>
+    <header>
+        <ul>
+          <li><a class="button" href="#" target="">INSCRIBETE</a></li>
+          <li><a class="active" href="#BIENVENIDA">BIENVENIDA</a></li>
+          <li><a href="#RIGC">RIGC</a></li>
+          <li><a href="#ODS">ODS</a></li>
+          <li><a href="#CONFERENCISTAS">CONFERENCISTAS</a></li>
+          <li><a href="#AGENDA">AGENDA</a></li>
+          <li><a href="#EXPERIENCIAS">EXPERIENCIAS</a></li>
+          <li><a href="#PREGUNTAS">PREGUNTAS</a></li>
+          <li><a href="#CONTACTO">CONTACTO</a></li>
+        </ul>
+        <section id="titleSinglePost" class="full-screen small-section table parallax parallax-fixed">
+          <div class="table-cell">
+            <div class="container">
+                <div class="contador">
+                  <div class="divs_contador"><span id="days"></span><p> días</p></div>
+                  <div class="divs_contador"><span id="hours"></span><p> horas</p></div>
+                  <div class="divs_contador"><span id="minutes"></span><p> minutos</p></div>
+                  <div class="divs_contador"><span id="seconds"></span><p>segundos</p></div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <div class="header"> <img
+            class="logo_RICG"
+            src="/images/logo-Conferencia-RICG-02-1295x1000.png"
+            alt="logo conferencia RICG"
+          />
+          <hr class="first_hr" />
+          <h1>
+            BIENVENIDO A PARTICIPAR EN NUESTRA CONFERENCIA ANUAL DE LA RED
+            INTERAMERICANA DE COMPRAS GUBERNAMENTALES
+            <p>•REPUBLICA DOMINICANA-2019•</p>
+          </h1>
+          <hr class="second_hr" />
+    </header>
+    <div class="container_img_hotel">
+      <img class="hotel_img" src="/images/hootel.jpg" alt=""/>
+    </div>
+    <div class="auditorio"><img  class="auditorio_img" src="/auditorio.jpg" alt="" /></div>
+    <div class="container_cards">
+      <div><img src="/images/pool.jpg" alt="" /></div>
+      <div><img src="/images/room.jpg" alt="" /></div>
+      <div><img src="/images/comida.jpg" alt="" /></div>
+    </div>
+    <hr class="third_hr"/>
+    <section class="contact_container">
+      <p class="contact_title">CONTACTO</p>
+      <div id="googleMap" class="googleMap"></div>
+     
+      <div class="contact_card">
+        <p class="hotel_name">HOTEL EL EMBAJADOR</p>
+        <p class="hotel_lastname">Roya Hideaway Hotel</p>
+        <hr class="hr_contact"/>
+        <p class="hotel_address">Ave. Saradota No. 65</p>
+        <p class="hotel_district">Santo Domingo Distrito Nacional</p>
+        <p class="hotel_page">www.barcelo.com</p>
+        <p class="hotel_number">(809)221-2131</p>
+      </div>
+      <div class="icon_location"><img src="/images/location.png" alt=""></div>
+    </section>
+    <hr class="fourth_hr"/>
+    <div class="footer_contain">
+      <div class="site_footer">
+        <h2>
+          • XV CONFERENCIA ANUAL DE LA RED INTERAMERICANA DE COMPRAS GUBERNAMENTALES
+          - RICO 2019 •
+        </h2>
+        <p class="p_pf">
+          EJE ESTRATEGICO PARA ALCANZAR LOS OBJETIVOS DE DESARROLLO SOSTENIBLE
+        </p>
+        <p class="p_ps">- REPUBLICA DOMINICANA -</p>
+        <p class="p_pt">2019 - #RICGRD2019 - Todos los derechos reservados.</p>
+        <p class="p_pft">DIRECCION GENERAL DE CONTRATACIONES PUBLICAS</p>
+      </div> 
+    </div>
+    <script>
+      function myMap() {
+      var mapProp= {
+        center:new google.maps.LatLng(18.4547691,-69.9354077),
+        zoom:16,
+        disableDefaultUI: true,
+        disableDoubleClickZoom: true,
+        draggable: false
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJVTd-Qfm4xiN_NnYzGaH9JUiZw_9A1iM&callback=myMap"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => { 
+  
+     
+          const DATE_TARGET = new Date('10/28/2022 0:01 AM');
+
+          const SPAN_DAYS = document.querySelector('span#days');
+          const SPAN_HOURS = document.querySelector('span#hours');
+          const SPAN_MINUTES = document.querySelector('span#minutes');
+          const SPAN_SECONDS = document.querySelector('span#seconds');
+
+          const MILLISECONDS_OF_A_SECOND = 1000;
+          const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+          const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+          const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+  
+          function updateCountdown() {
+
+              const NOW = new Date()
+              const DURATION = DATE_TARGET - NOW;
+              const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+              const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+              const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+              const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+ 
+              SPAN_DAYS.textContent = REMAINING_DAYS;
+              SPAN_HOURS.textContent = REMAINING_HOURS;
+              SPAN_MINUTES.textContent = REMAINING_MINUTES;
+              SPAN_SECONDS.textContent = REMAINING_SECONDS;
+          }
+  
+     
+          updateCountdown();
+
+          setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+        });
+      </script>
+  </body>
+</html>
